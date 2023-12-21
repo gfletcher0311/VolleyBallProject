@@ -3,6 +3,11 @@ body {
     
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
 
 .title {
     text-align: center;
@@ -17,6 +22,22 @@ body {
     margin-top: 335px;
     color: #c5c6c7
 }
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  .error {
+    border-color: red !important;
+  }
+
+  .leave-right {
+    animation: leave-right 1s forwards;
+  }
+  
+  .leave-down {
+    animation: leave-down 1s forwards;
+  }
 
 input[type=text]{
     width: 300px;
@@ -37,6 +58,7 @@ input[type=text]:focus{
     display: block;
     margin-top: 10%;
     background-color: #c5c6c7;
+    border-color: #1F2833;
 }
 
 input[type=button]{
@@ -62,6 +84,8 @@ input[type=button]:hover{
     border-width: 0px;
 }
 
+
+
 @keyframes floating {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }
@@ -73,3 +97,28 @@ input[type=button]:hover{
     100% {background-color: #45A29E;}
           
 }
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes leave-right {
+    0% {transform: translateX(0);}
+    80% {transform: translateX(200px);}
+    100% {opacity: 0;}
+  }
+
+  @keyframes leave-down {
+    0% {transform: translateY(0);}
+    80% {transform: translateY(100px);}
+    100% {opacity: 0;}
+  }
+  
+  @keyframes return-from-down {
+    0% {transform: translateY(100%);}
+    80% {transform: translateY(0%);}
+    100% {opacity: 1;}
+  }
