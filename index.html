@@ -11,7 +11,7 @@
             </div>
             <!-- Step 1 code-->
             <div class="mainDiv">
-                <input type="text" id="inputbox" name="enterName" placeholder="Enter your name">
+                <input type="text" id="nameBox" name="enterName" placeholder="Enter your name">
                 <input class="buttonDesign" type="button" id="continueButton"  value="Continue">
             </div>
 
@@ -23,8 +23,58 @@
                 <button class="pickPosition" data-value="rightside">Rightside</button>
                 <button class="pickPosition" data-value="middle">Middle</button>
                 <button class="pickPosition" data-value="setter">Setter</button>
+
+                <input class="buttonDesign continueButton2" type="button" id="continueButton2"  value="Continue">
             </div>
-            <input class="buttonDesign continueButton2" type="button" id="continueButton2"  value="Continue">
+
+            <!--Step 3 code-->
+            <div id="parent-container">
+                
+                <div id="step3-container">
+                    <!--Possible Skills: "serving", "passing", "defense", "setting", "serve-recieve", "communication", "hitting", "blocking"-->
+                    <div id="serving">
+                        <p class="skillLabel">Serving</p>
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                    </div>
+
+                    <div id="passing">
+                        <p class="skillLabel">Passing</p>
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                    </div>
+
+                    <div id="defense">
+                        <p class="skillLabel">Defense</p>
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                    </div>
+
+                    <div id="setting">
+                        <p class="skillLabel">Setting</p>
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                    </div>
+
+                    <div id="hitting">
+                        <p class="skillLabel">Hitting</p>
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                    </div>
+
+                    <div id="blocking">
+                        <p class="skillLabel">Blocking</p>
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                    </div>
+                    
+                    <div id="serve-recieve">
+                        <p class="skillLabel">Serve-Recieve</p>
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                    </div>
+
+                    <div id="communication">
+                        <p class="skillLabel">Communication</p>
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                    </div>
+
+                </div>
+            </div>
+            <input class="buttonDesign" type="button" id="continueButton3"  value="Continue">
             <footer>
                 <div class="copyright">
                     <p>Gavin Fletcher &copy 2023. All rights reserved.</p>
