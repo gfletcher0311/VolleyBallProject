@@ -38,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
               inputBox.classList.remove("leave-right");
               continueButton.classList.remove("leave-down");
               mainDiv.style.display = "none"
+              staggerButtons();
           }, 800)
           document.getElementsByClassName("button-container")[0].style.opacity = 1;
-          continueButton2.style.opacity = 1;
+          document.addEventListener('DOMContentLoaded', staggerButtons);
           stage = 2; //Move on to the next stage
         } else {
           inputBox.classList.add("shake", "error");
@@ -50,6 +51,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       } 
     });
+
+    function staggerButtons() {
+      positionButtons.forEach((button, index) => {
+        setTimeout(() => {
+          button.style.opacity = '1';
+          button.style.transform = 'translateY(0)';
+        }, index * 200); // Change the delay time (in milliseconds) as needed
+      });
+        document.getElementById("posP").style.opacity = 1;
+        continueButton2.style.opacity = 1;
+        continueButton2.style.transform = "translateY(0)";
+    }
 
     continueButton2.addEventListener("click", function() {
       if (stage === 2) {
@@ -61,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
           } 
         });
         if (isSelected) {
-          console.log("Good to go")
+          console.log(userPosition + " is the selected position!")
         }else {
           positionButtons.forEach(button => {
             button.classList.add("error")
@@ -80,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       event.target.classList.add("selected")
+      userPosition = event.target.dataset.value;
     }
 
     positionButtons.forEach(button => {

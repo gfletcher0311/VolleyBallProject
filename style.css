@@ -1,5 +1,6 @@
 body {
-    background-color: #0b0c10
+    background-color: #0b0c10;
+    overflow: hidden;
     
 }
 
@@ -24,12 +25,14 @@ footer {
 }
 
 .buttonDesign {
-  width: 200px;
+    width: 200px;
     height: 100px;
     font-size: 20px;
     margin: auto;
     border-width: 35px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 40px;
     background-color: #66fcf1;
     transition: border-width 0.5s linear;
@@ -53,16 +56,19 @@ footer {
 
 .pickPosition {
   border-style: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   height: 100px;
   width: 200px;
-  justify-content: center;
   padding: 30px;
-  margin-top: 200px;
   cursor: pointer;
-  display: inline-block;
   font-size: 20px;
   background-color: #c5c6c7;
   transition: 0.5s ease;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .pickPosition:hover, .selected  {
@@ -70,10 +76,23 @@ footer {
   animation: shakeSelected 0.5s infinite;
 }
 
+#posP {
+  display: flex;
+  color: #c5c6c7;
+  font-size: 50px;
+  margin-top: 130px;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
 
 
 .continueButton2 {
   opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 1.5s ease, transform 1.5s ease, border-width 0.5s linear;
 }
 .shake {
     animation: shake 0.5s ease-in-out;
@@ -160,6 +179,5 @@ input[type=text]:focus{
     25% { transform: translate(-1px, -1px); }
     50% { transform: translate(1px, 1px); }
     75% { transform: translate(-1px, 1px); }
-    100% { transform: translate(1px, -1
-      px); }
+    100% { transform: translate(1px, -1px); }
   }
