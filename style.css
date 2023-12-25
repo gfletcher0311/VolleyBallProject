@@ -1,6 +1,9 @@
-body {
+html, body {
     background-color: #0b0c10;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 footer {
@@ -129,10 +132,17 @@ footer {
   transition: opacity 0.5s ease, transform 0.5s ease;
 
 }
+.crossOut {
+  text-decoration: line-through;
+}
 .skillsInput:focus {
   outline: none;
   background-color: #c5c6c7;
   border-color: #1F2833;
+}
+
+.skillsInput:disabled {
+  background-color: #525252;
 }
 
 
@@ -142,13 +152,94 @@ footer {
   transition: opacity 1.6s ease, transform 1.6s ease, border-width 0.5s linear;
 }
 
+#chartContainer {
+  position: absolute;
+  left: 130%;
+  top: 25%;
+  transform: translate(-50%, 5%);
+  height:25vh; 
+  width:25vw;
+  background-color: #0b0c10; /* Optional background color for the container */
+  transition: left 0.5s ease;
+}
+
+#step4-container {
+  display: none;
+}
+
+#continueButton4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: transform 1s ease, opacity 1s ease;
+}
+#scoreText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c5c5c5;
+  font-size: 40px;
+}
+
+#rankText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gold;
+  font-size: 80px;
+}
 
 
+.s-grade {
+  animation: lightning 1s infinite;
+  color: gold;
+}
 
-.shake {
-    animation: shake 0.5s ease-in-out;
-  }
-  
+
+.a-grade {
+  animation: glowing 1s infinite ease;
+  color: rgb(62, 10, 160)
+}
+
+
+.b-grade {
+  animation: pulse 1.5s infinite;
+}
+
+
+.c-grade {
+  display: none;
+}
+
+
+.d-grade {
+  display: none;
+}
+
+
+.f-grade {
+  transform-origin: top center;
+  color: rgb(112, 112, 112);
+  animation: swingAfter 2s forwards;
+}
+
+.swing-start {
+  animation: swingStart 2s forwards;
+}
+
+.glow{
+  animation: glowing 1.5s infinite;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
   .error {
     border-style: solid;
     border-color: red !important;
@@ -183,6 +274,7 @@ footer {
     background-color: #c5c6c7;
     border-color: #1F2833;
 }
+
 
 
 
@@ -232,3 +324,76 @@ footer {
     75% { transform: translate(-1px, 1px); }
     100% { transform: translate(1px, -1px); }
   }
+
+  @keyframes glowing {
+    0% {
+      text-shadow: 0px 0 5px #45A29E;
+    }
+    50% {
+      text-shadow: 0 0 25px #45A29E;
+    }
+    100% {
+      text-shadow: 0 0 5px #45A29E;
+    }
+  }
+
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
+  @keyframes lightning {
+    0% {
+      text-shadow: none;
+    }
+    20% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+
+
+@keyframes swingStart {
+  0% {
+    transform: rotate(-180deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swingAfter {
+  0% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}

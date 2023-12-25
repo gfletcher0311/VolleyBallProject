@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
+        <script src="https://unpkg.com/chart.js@2.4.0/dist/Chart.js"></script>
     </head>
         <body>
             <div class="title">
@@ -11,7 +12,7 @@
             </div>
             <!-- Step 1 code-->
             <div class="mainDiv">
-                <input type="text" id="nameBox" name="enterName" placeholder="Enter your name">
+                <input type="text" id="nameBox" name="enterName" placeholder="Enter your name" autocomplete="off">
                 <input class="buttonDesign" type="button" id="continueButton"  value="Continue">
             </div>
 
@@ -32,49 +33,63 @@
                 
                 <div id="step3-container">
                     <!--Possible Skills: "serving", "passing", "defense", "setting", "serve-recieve", "communication", "hitting", "blocking"-->
-                    <div id="serving">
+                    <div class="skill" id="serving">
                         <p class="skillLabel">Serving</p>
-                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-10)" >
                     </div>
 
-                    <div id="passing">
+                    <div class="skill" id="passing">
                         <p class="skillLabel">Passing</p>
-                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-10)" >
                     </div>
 
-                    <div id="defense">
+                    <div class="skill" id="defense">
                         <p class="skillLabel">Defense</p>
-                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-10)" >
                     </div>
 
-                    <div id="setting">
+                    <div class="skill" id="setting">
                         <p class="skillLabel">Setting</p>
-                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-10)" >
                     </div>
 
-                    <div id="hitting">
+                    <div class="skill" id="hitting">
                         <p class="skillLabel">Hitting</p>
-                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-10)" >
                     </div>
 
-                    <div id="blocking">
+                    <div class="skill" id="blocking">
                         <p class="skillLabel">Blocking</p>
-                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-10)" >
                     </div>
                     
-                    <div id="serve-recieve">
+                    <div class="skill" id="serve-recieve">
                         <p class="skillLabel">Serve-Recieve</p>
-                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-10)" >
                     </div>
 
-                    <div id="communication">
+                    <div class="skill" id="communication">
                         <p class="skillLabel">Communication</p>
-                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-5)">
+                        <input type="text" class="skillsInput" placeholder="Enter skill value (0-10)">
                     </div>
 
                 </div>
             </div>
             <input class="buttonDesign" type="button" id="continueButton3"  value="Continue">
+            <div id="step4-container">
+                <div id="rankingDiv">
+                    <p id="scoreText">Score:  </p>
+                </div>
+                <div id="rankDiv">
+                    <p id="rankText">
+                        F
+                    </p>
+                </div>
+                <div id="chartContainer">
+                    <canvas id="skillChart" width="500" height="500"></canvas>
+                </div>
+                <input class="buttonDesign" type="button" id="continueButton4" value="Restart">
+            </div>
             <footer>
                 <div class="copyright">
                     <p>Gavin Fletcher &copy 2023. All rights reserved.</p>
