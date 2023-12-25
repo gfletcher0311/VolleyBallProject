@@ -106,6 +106,7 @@ footer {
   grid-template-rows: repeat(2, 1fr); /* 2 rows */
   gap: 25px;
   align-items: center;
+  margin-top: -40px;
 
 }
 .skillsInput {
@@ -144,6 +145,27 @@ footer {
 .skillsInput:disabled {
   background-color: #525252;
 }
+
+#specialTextBox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+#specialAbilityDiv,
+#memeAbilityDiv {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#specialAbilityDiv input,
+#memeAbilityDiv input {
+    width: 100%; /* Ensures the input stretches within its container */
+    box-sizing: border-box; /* Includes padding and borders within the width */
+}
+
+
 
 
 #continueButton3 {
@@ -291,7 +313,7 @@ footer {
 #actualSpecial {
   margin-top: -30px;
   animation: glowing 2s infinite;
-  left: -0%;
+  left: -50%;
   opacity: 0;
   transition: left 0.5s ease, opacity 1s ease;
 
@@ -299,7 +321,7 @@ footer {
 #memeSpecial {
   margin-top: 400px;
   animation: pulse 0.7s infinite;
-  left: -20%;
+  left: -50%;
   opacity: 0;
   transition: left 0.5s ease, opacity 1s ease;
 }

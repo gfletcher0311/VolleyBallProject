@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const step4Container = document.getElementById("step4-container");
     let userInputValue = ''; // Gets the name of the player for final result page
     let userPosition = ''; // Keeps the user position from the button clicked
-
+    let specialAbilityText = ''; //Usr input special ability
+    let memeAbilityText = ''; //usr input meme ability
     let stage = 1; //Decides what stage of the ranking process we are on
     //Stage 1: name
     //Stage 2: Position
@@ -123,6 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
     continueButton3.addEventListener("click", function() {
       if(checkNumbers() && stage === 3) {
         userData = [];
+        specialAbilityText = document.getElementById("specialAbility").value.trim();
+        memeAbilityText = document.getElementById("memeAbility").value.trim();
         step3Container.querySelectorAll(".skill").forEach(skill => {
           currentInput = skill.querySelector(".skillsInput")
           if (!currentInput.disabled) {
@@ -144,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalPoints = (positionSkills[userPosition].length) * 10 // Take the number of skills * 10(max points)
         const percentage = Math.round((sum/totalPoints)*100) // Round to nearest whole number for ranking
         //console.log(percentage + " therefore rank: "+ getRank(percentage));
-        document.getElementById("scoreText").textContent += sum+"/"+totalPoints
+        document.getElementById("scoreText").textContent = userInputValue+"'s" + " Score: "+sum+"/"+totalPoints;
         var config = {
           type: 'radar',
           data: {
@@ -191,15 +194,17 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         const drawChart = new Chart(skillChart, config);
         step4Container.style.display = "block";
+        document.getElementById("memeSpecial").textContent += memeAbilityText;
+        document.getElementById("actualSpecial").textContent += specialAbilityText;
         setTimeout(function() {
           document.getElementById("chartContainer").style.left = "85%"
-          document.getElementById("actualSpecial").style.cssText = "opacity: 1; left: 0%;";
-          document.getElementById("memeSpecial").style.cssText = "opacity: 1; left: 0%;";
-        }, 2000);
+        }, 3000);
         const userRank = getRank(percentage);
         setTimeout(function() {
           document.getElementById("scoreText").style.opacity = 1;
-        }, 3000);
+          document.getElementById("actualSpecial").style.cssText = "opacity: 1; left: 0%;";
+          document.getElementById("memeSpecial").style.cssText = "opacity: 1; left: 0%;";
+        }, 4000);
         setTimeout(function() {
           document.getElementById("rankText").textContent = userRank;
           document.getElementById("rankText").style.opacity = 1;
@@ -209,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             document.getElementById("scoreText").classList.remove(userRank.toLowerCase()+"-grade");
             document.getElementById("continueButton4").style.cssText = "transform: translateY(0); opacity: 1;";
-          }, 8000);
+          }, 9000);
       } 
 })
 
