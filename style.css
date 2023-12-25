@@ -171,25 +171,29 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25%;
+  margin-top: 11%;
   opacity: 0;
   transform: translateY(200px);
-  transition: transform 1s ease, opacity 1s ease;
+  transition: opacity 1.6s ease, transform 1.6s ease, border-width 0.5s linear;
 }
 #scoreText {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #c5c5c5;
-  font-size: 40px;
+  font-size: 60px;
+  opacity: 0;
+  transition: opacity 1.6s ease
 }
 
 #rankText {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: gold;
-  font-size: 80px;
+  font-size: 200px;
+  margin-top: 170px;
+  opacity: 0;
+  transition: opacity 1.6s ease
 }
 
 
@@ -201,29 +205,34 @@ footer {
 
 .a-grade {
   animation: glowing 1s infinite ease;
-  color: rgb(62, 10, 160)
+  color: rgb(8, 192, 91)
 }
 
 
 .b-grade {
+  color: royalblue;
   animation: pulse 1.5s infinite;
 }
 
 
 .c-grade {
-  display: none;
+  color: rgb(124, 201, 226);
+  animation: gradient 3s infinite;
 }
 
 
 .d-grade {
-  display: none;
+  color:rgb(70, 37, 10);
+  animation: shake 0.5s infinite;
 }
 
 
 .f-grade {
   transform-origin: top center;
-  color: rgb(112, 112, 112);
-  animation: swingAfter 2s forwards;
+  animation: swingAfter 3s infinite;
+  background-image: url("crackedStone.avif");
+  background-clip: text;
+  color: transparent;
 }
 
 .swing-start {
@@ -273,6 +282,29 @@ footer {
     margin-top: 10%;
     background-color: #c5c6c7;
     border-color: #1F2833;
+}
+#specialsDiv p {
+   position: absolute;
+   font-size: 50px;
+   color: #c5c6c7;
+}
+#actualSpecial {
+  margin-top: -30px;
+  animation: glowing 2s infinite;
+  left: -0%;
+  opacity: 0;
+  transition: left 0.5s ease, opacity 1s ease;
+
+}
+#memeSpecial {
+  margin-top: 400px;
+  animation: pulse 0.7s infinite;
+  left: -20%;
+  opacity: 0;
+  transition: left 0.5s ease, opacity 1s ease;
+}
+.shake {
+  animation: shake 0.5s ease;
 }
 
 
@@ -360,25 +392,6 @@ footer {
       text-shadow: none;
     }
   }
-
-
-@keyframes swingStart {
-  0% {
-    transform: rotate(-180deg);
-  }
-  25% {
-    transform: rotate(10deg);
-  }
-  50% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 
 @keyframes swingAfter {
   0% {

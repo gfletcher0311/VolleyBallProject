@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalPoints = (positionSkills[userPosition].length) * 10 // Take the number of skills * 10(max points)
         const percentage = Math.round((sum/totalPoints)*100) // Round to nearest whole number for ranking
         //console.log(percentage + " therefore rank: "+ getRank(percentage));
+        document.getElementById("scoreText").textContent += sum+"/"+totalPoints
         var config = {
           type: 'radar',
           data: {
@@ -192,10 +193,29 @@ document.addEventListener('DOMContentLoaded', function() {
         step4Container.style.display = "block";
         setTimeout(function() {
           document.getElementById("chartContainer").style.left = "85%"
-          document.getElementById("continueButton4").style.cssText = "transform: translateY(0); opacity: 1;";
+          document.getElementById("actualSpecial").style.cssText = "opacity: 1; left: 0%;";
+          document.getElementById("memeSpecial").style.cssText = "opacity: 1; left: 0%;";
         }, 2000);
+        const userRank = getRank(percentage);
+        setTimeout(function() {
+          document.getElementById("scoreText").style.opacity = 1;
+        }, 3000);
+        setTimeout(function() {
+          document.getElementById("rankText").textContent = userRank;
+          document.getElementById("rankText").style.opacity = 1;
+          document.getElementById("rankText").classList.add(userRank.toLowerCase()+"-grade");
+          document.getElementById("scoreText").classList.add(userRank.toLowerCase()+"-grade");
+        }, 5000);
+        setTimeout(function() {
+            document.getElementById("scoreText").classList.remove(userRank.toLowerCase()+"-grade");
+            document.getElementById("continueButton4").style.cssText = "transform: translateY(0); opacity: 1;";
+          }, 8000);
       } 
 })
+
+    document.getElementById("continueButton4").addEventListener("click", function() {
+      window.location.reload();
+    });
 
     function handleButtonClick(event) {
       positionButtons.forEach(button => {
