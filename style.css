@@ -178,9 +178,9 @@ footer {
   position: absolute;
   left: 130%;
   top: 25%;
-  transform: translate(-50%, 5%);
+  transform: translate(-55%, -10%);
   height:25vh; 
-  width:25vw;
+  width:30vw;
   background-color: #0b0c10; /* Optional background color for the container */
   transition: left 0.5s ease;
 }

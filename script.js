@@ -1,6 +1,6 @@
 const positionSkills = {
   libero: ["serving", "passing", "defense", "setting", "serve-recieve", "communication"],
-  outside: ["serving", "passing", "defense", "setting", "hitting", "blocking", "communication"],
+  outside: ["serving", "passing", "defense", "setting", "serve-recieve", "hitting", "blocking", "communication"],
   rightside: ["serving", "passing", "hitting", "blocking", "communication"],
   middle: ["serving", "hitting", "blocking", "communication"],
   setter: ["serving", "passing", "setting", "communication"]
@@ -214,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             document.getElementById("scoreText").classList.remove(userRank.toLowerCase()+"-grade");
             document.getElementById("continueButton4").style.cssText = "transform: translateY(0); opacity: 1;";
+            exportBtn.style.cssText = "display: block; opacity: 1; left: 95%;";
           }, 9000);
       } 
 })
@@ -249,6 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       return 'Undefined'; // Return 'Undefined' if the percentage doesn't fit into any range
     }
+
 
     function checkNumbers() {
       let isValid = true;
